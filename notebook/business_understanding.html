@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Description des Datasets - Olist</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 17px;
+            opacity: 0.9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .dataset {
+            background: white;
+            margin-bottom: 35px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #2563eb;
+        }
+
+        .dataset.central {
+            border-left: 5px solid #f59e0b;
+            background: #fffdf7;
+        }
+
+        .dataset h2 {
+            color: #1e3a5f;
+            font-size: 21px;
+            margin-bottom: 15px;
+            word-break: break-word;
+        }
+
+        .dataset.central h2 {
+            color: #b45309;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        thead {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        th {
+            padding: 13px 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        td:first-child {
+            font-family: Consolas, monospace;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background: #eaf2ff;
+        }
+
+        .utility {
+            background: #eef6ff;
+            border-left: 4px solid #2563eb;
+            padding: 14px 16px;
+            border-radius: 5px;
+            color: #334155;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background: #1e3a5f;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .dataset {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>DESCRIPTION DES DATASETS</h1>
+    <p>Olist E-Commerce Dataset</p>
+</header>
+
+<main class="container">
+
+
+    <!-- 2.1 MARKETING QUALIFIED LEADS -->
+
+    <section class="dataset">
+
+        <h2>2.1. olist_marketing_qualified_leads_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Informations sur les leads qualifiés par le marketing (MQL).
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>mql_id</td>
+                    <td>Identifiant unique du lead</td>
+                    <td>Identifie le lead marketing</td>
+                </tr>
+
+                <tr>
+                    <td>first_contact_date</td>
+                    <td>Date du premier contact</td>
+                    <td>Indique quand le lead a été contacté pour la première fois</td>
+                </tr>
+
+                <tr>
+                    <td>landing_page_id</td>
+                    <td>Identifiant de la page de destination</td>
+                    <td>Identifie la page utilisée pour obtenir le lead</td>
+                </tr>
+
+                <tr>
+                    <td>origin</td>
+                    <td>Source du lead</td>
+                    <td>Indique d'où provient le lead</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Mesurer la performance des canaux d'acquisition marketing.
+        </p>
+
+    </section>
+
+
+    <!-- 2.2 CLOSED DEALS -->
+
+    <section class="dataset">
+
+        <h2>2.2. olist_closed_deals_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Informations sur les vendeurs (leads) ayant conclu un accord commercial avec Olist, faisant suite aux leads qualifiés par le marketing.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>mql_id</td>
+                    <td>Identifiant du lead marketing d'origine</td>
+                    <td>Relie le deal conclu au lead correspondant dans marketing_qualified_leads</td>
+                </tr>
+
+                <tr>
+                    <td>seller_id</td>
+                    <td>Identifiant du vendeur créé suite au deal</td>
+                    <td>Relie le deal au vendeur dans sellers</td>
+                </tr>
+
+                <tr>
+                    <td>sdr_id</td>
+                    <td>Identifiant du Sales Development Representative</td>
+                    <td>Indique qui a qualifié le lead</td>
+                </tr>
+
+                <tr>
+                    <td>sr_id</td>
+                    <td>Identifiant du Sales Representative</td>
+                    <td>Indique qui a conclu la vente</td>
+                </tr>
+
+                <tr>
+                    <td>won_date</td>
+                    <td>Date de conclusion du deal</td>
+                    <td>Indique quand le lead est devenu vendeur actif</td>
+                </tr>
+
+                <tr>
+                    <td>business_segment</td>
+                    <td>Secteur d'activité du vendeur</td>
+                    <td>Permet de segmenter les vendeurs par domaine</td>
+                </tr>
+
+                <tr>
+                    <td>lead_type</td>
+                    <td>Type de lead (ex. online_medium)</td>
+                    <td>Indique le canal ou la nature du lead</td>
+                </tr>
+
+                <tr>
+                    <td>lead_behaviour_profile</td>
+                    <td>Profil comportemental du lead</td>
+                    <td>Aide à catégoriser le style du vendeur potentiel</td>
+                </tr>
+
+                <tr>
+                    <td>has_company</td>
+                    <td>Indique si le lead possède une entreprise déclarée</td>
+                    <td>Qualifie le sérieux/statut légal du vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>has_gtin</td>
+                    <td>Indique si les produits ont un code GTIN</td>
+                    <td>Indique la maturité du catalogue produit du vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>average_stock</td>
+                    <td>Stock moyen déclaré</td>
+                    <td>Donne une idée de la taille de l'inventaire du vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>business_type</td>
+                    <td>Type d'activité (ex. reseller, manufacturer)</td>
+                    <td>Précise le modèle commercial du vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>declared_product_catalog_size</td>
+                    <td>Taille du catalogue produit déclarée</td>
+                    <td>Indique l'ampleur de l'offre du vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>declared_monthly_revenue</td>
+                    <td>Chiffre d'affaires mensuel déclaré</td>
+                    <td>Donne un indicateur de la taille économique du vendeur</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Mesurer le taux de conversion des leads en vendeurs actifs et analyser les caractéristiques des vendeurs recrutés (funnel marketing → onboarding vendeur).
+        </p>
+
+    </section>
+
+
+   
+    <!-- 2.3 GEOLOCATION -->
+
+    <section class="dataset">
+
+        <h2>2.3. olist_geolocation_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Correspondance entre les codes postaux et les coordonnées géographiques.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>geolocation_zip_code_prefix</td>
+                    <td>Préfixe du code postal</td>
+                    <td>Permet de relier une position géographique à un code postal</td>
+                </tr>
+
+                <tr>
+                    <td>geolocation_lat</td>
+                    <td>Latitude</td>
+                    <td>Indique la position nord-sud</td>
+                </tr>
+
+                <tr>
+                    <td>geolocation_lng</td>
+                    <td>Longitude</td>
+                    <td>Indique la position est-ouest</td>
+                </tr>
+
+                <tr>
+                    <td>geolocation_city</td>
+                    <td>Ville</td>
+                    <td>Indique la ville correspondant à la position</td>
+                </tr>
+
+                <tr>
+                    <td>geolocation_state</td>
+                    <td>État</td>
+                    <td>Indique l'État correspondant à la position</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Réaliser des analyses géographiques et calculer des distances entre vendeurs et clients.
+        </p>
+
+    </section>
+
+
+    <!-- 2.4 ORDER ITEMS -->
+
+    <section class="dataset">
+
+        <h2>2.4. olist_order_items_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Détail des articles contenus dans chaque commande.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>order_id</td>
+                    <td>Identifiant de la commande</td>
+                    <td>Relie l'article à sa commande</td>
+                </tr>
+
+                <tr>
+                    <td>order_item_id</td>
+                    <td>Numéro de l'article dans la commande</td>
+                    <td>Identifie la position de l'article dans la commande</td>
+                </tr>
+
+                <tr>
+                    <td>product_id</td>
+                    <td>Identifiant du produit</td>
+                    <td>Indique quel produit a été acheté</td>
+                </tr>
+
+                <tr>
+                    <td>seller_id</td>
+                    <td>Identifiant du vendeur</td>
+                    <td>Indique quel vendeur a vendu le produit</td>
+                </tr>
+
+                <tr>
+                    <td>shipping_limit_date</td>
+                    <td>Date limite d'expédition</td>
+                    <td>Indique la date limite à laquelle le vendeur doit expédier l'article</td>
+                </tr>
+
+                <tr>
+                    <td>price</td>
+                    <td>Prix de l'article</td>
+                    <td>Indique le prix payé pour le produit</td>
+                </tr>
+
+                <tr>
+                    <td>freight_value</td>
+                    <td>Frais de transport</td>
+                    <td>Indique le coût de livraison de l'article</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Analyser les produits vendus, les prix, les frais de livraison et les vendeurs.
+        </p>
+
+    </section>
+
+
+    <!-- 2.5 PAYMENTS -->
+
+    <section class="dataset">
+
+        <h2>2.5. olist_order_payments_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Informations concernant les paiements des commandes.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>order_id</td>
+                    <td>Identifiant de la commande</td>
+                    <td>Relie le paiement à la commande</td>
+                </tr>
+
+                <tr>
+                    <td>payment_sequential</td>
+                    <td>Numéro séquentiel du paiement</td>
+                    <td>Identifie l'ordre des paiements d'une commande</td>
+                </tr>
+
+                <tr>
+                    <td>payment_type</td>
+                    <td>Type de paiement</td>
+                    <td>Indique le moyen de paiement utilisé</td>
+                </tr>
+
+                <tr>
+                    <td>payment_installments</td>
+                    <td>Nombre d'échéances</td>
+                    <td>Indique le nombre de paiements prévus</td>
+                </tr>
+
+                <tr>
+                    <td>payment_value</td>
+                    <td>Montant payé</td>
+                    <td>Indique le montant du paiement</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Analyser les méthodes de paiement et les comportements financiers des clients.
+        </p>
+
+    </section>
+
+
+    <!-- 2.6 REVIEWS -->
+
+    <section class="dataset">
+
+        <h2>2.6. olist_order_reviews_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Avis et évaluations laissés par les clients après leurs commandes.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>review_id</td>
+                    <td>Identifiant de l'avis</td>
+                    <td>Identifie l'avis client</td>
+                </tr>
+
+                <tr>
+                    <td>order_id</td>
+                    <td>Identifiant de la commande</td>
+                    <td>Relie l'avis à la commande concernée</td>
+                </tr>
+
+                <tr>
+                    <td>review_score</td>
+                    <td>Note de 1 à 5</td>
+                    <td>Mesure le niveau de satisfaction du client</td>
+                </tr>
+
+                <tr>
+                    <td>review_comment_title</td>
+                    <td>Titre du commentaire</td>
+                    <td>Contient le résumé ou le titre de l'avis</td>
+                </tr>
+
+                <tr>
+                    <td>review_comment_message</td>
+                    <td>Message du commentaire</td>
+                    <td>Contient le commentaire détaillé du client</td>
+                </tr>
+
+                <tr>
+                    <td>review_creation_date</td>
+                    <td>Date de création</td>
+                    <td>Indique quand l'avis a été créé</td>
+                </tr>
+
+                <tr>
+                    <td>review_answer_timestamp</td>
+                    <td>Date de réponse</td>
+                    <td>Indique quand Olist a répondu à l'avis</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Mesurer la satisfaction et analyser l'expérience client.
+        </p>
+
+    </section>
+
+
+    <!-- 2.7 ORDERS -->
+
+    <section class="dataset central">
+
+        <h2>2.7. olist_orders_dataset.csv 🔑</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Dataset central contenant les informations principales sur les commandes.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>order_id</td>
+                    <td>Identifiant unique de la commande</td>
+                    <td>Identifie chaque commande</td>
+                </tr>
+
+                <tr>
+                    <td>customer_id</td>
+                    <td>Identifiant du client</td>
+                    <td>Relie la commande au client</td>
+                </tr>
+
+                <tr>
+                    <td>order_status</td>
+                    <td>Statut de la commande</td>
+                    <td>Indique l'état actuel de la commande</td>
+                </tr>
+
+                <tr>
+                    <td>order_purchase_timestamp</td>
+                    <td>Date et heure d'achat</td>
+                    <td>Indique quand la commande a été passée</td>
+                </tr>
+
+                <tr>
+                    <td>order_approved_at</td>
+                    <td>Date d'approbation du paiement</td>
+                    <td>Indique quand le paiement de la commande a été approuvé</td>
+                </tr>
+
+                <tr>
+                    <td>order_delivered_carrier_date</td>
+                    <td>Date de remise au transporteur</td>
+                    <td>Indique quand la commande a été remise au transporteur</td>
+                </tr>
+
+                <tr>
+                    <td>order_delivered_customer_date</td>
+                    <td>Date de livraison au client</td>
+                    <td>Indique quand le client a reçu la commande</td>
+                </tr>
+
+                <tr>
+                    <td>order_estimated_delivery_date</td>
+                    <td>Date de livraison estimée</td>
+                    <td>Indique la date prévue de livraison</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Analyser le cycle complet des commandes et calculer les KPI logistiques.
+        </p>
+
+    </section>
+
+
+    <!-- 2.8 PRODUCTS -->
+
+    <section class="dataset">
+
+        <h2>2.8. olist_products_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Informations décrivant les produits disponibles sur la plateforme.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>product_id</td>
+                    <td>Identifiant unique du produit</td>
+                    <td>Identifie le produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_category_name</td>
+                    <td>Catégorie du produit</td>
+                    <td>Indique la catégorie à laquelle appartient le produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_name_lenght</td>
+                    <td>Longueur du nom</td>
+                    <td>Indique le nombre de caractères du nom du produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_description_lenght</td>
+                    <td>Longueur de la description</td>
+                    <td>Indique le nombre de caractères de la description</td>
+                </tr>
+
+                <tr>
+                    <td>product_photos_qty</td>
+                    <td>Nombre de photos</td>
+                    <td>Indique combien de photos présentent le produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_weight_g</td>
+                    <td>Poids en grammes</td>
+                    <td>Indique le poids du produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_length_cm</td>
+                    <td>Longueur en centimètres</td>
+                    <td>Indique la longueur du produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_height_cm</td>
+                    <td>Hauteur en centimètres</td>
+                    <td>Indique la hauteur du produit</td>
+                </tr>
+
+                <tr>
+                    <td>product_width_cm</td>
+                    <td>Largeur en centimètres</td>
+                    <td>Indique la largeur du produit</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Décrire les caractéristiques des produits et étudier leur impact sur les ventes.
+        </p>
+
+    </section>
+
+
+    <!-- 2.9 SELLERS -->
+
+    <section class="dataset">
+
+        <h2>2.9. olist_sellers_dataset.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Informations concernant les vendeurs présents sur la plateforme.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>seller_id</td>
+                    <td>Identifiant unique du vendeur</td>
+                    <td>Identifie le vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>seller_zip_code_prefix</td>
+                    <td>Préfixe du code postal</td>
+                    <td>Permet de localiser approximativement le vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>seller_city</td>
+                    <td>Ville du vendeur</td>
+                    <td>Indique la ville où se trouve le vendeur</td>
+                </tr>
+
+                <tr>
+                    <td>seller_state</td>
+                    <td>État du vendeur</td>
+                    <td>Indique l'État où se trouve le vendeur</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Analyser la localisation et la performance des vendeurs.
+        </p>
+
+    </section>
+
+
+    <!-- 2.10 TRANSLATION -->
+
+    <section class="dataset">
+
+        <h2>2.10. product_category_name_translation.csv</h2>
+
+        <p class="description">
+            <strong>Description :</strong>
+            Traduction des catégories de produits du portugais vers l'anglais.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Colonne</th>
+                    <th>Description</th>
+                    <th>Rôle</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>product_category_name</td>
+                    <td>Nom de la catégorie en portugais</td>
+                    <td>Identifie la catégorie originale</td>
+                </tr>
+
+                <tr>
+                    <td>product_category_name_english</td>
+                    <td>Nom de la catégorie en anglais</td>
+                    <td>Fournit la traduction anglaise de la catégorie</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <p class="utility">
+            <strong>Utilité :</strong>
+            Faciliter l'analyse et la compréhension des catégories de produits en anglais.
+        </p>
+
+    </section>
+
+</main>
+
+
+</body>
+</html>
