@@ -131,6 +131,9 @@ print(df["negative_review"].value_counts())
 # 10. BILAN DU NETTOYAGE
 # ============================================================
 
+
+
+
 print("\n" + "=" * 70)
 print("BILAN DU NETTOYAGE")
 print("=" * 70)
@@ -138,6 +141,7 @@ print("=" * 70)
 print("Nettoyage terminé.")
 
 print("\nDoublons supprimés :", duplicates)
+
 
 print("\nValeurs manquantes par colonne :")
 print(df.isna().sum())
